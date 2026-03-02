@@ -1,0 +1,96 @@
+﻿ *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'poppins', sans-serif;
+      background-color: #ffffff;
+      color: #222;
+    }
+    
+    .hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 24px 60px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'poppins', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: #1a1a1a;
+      margin-bottom: 24px;
+    }
+    .hero p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #555;
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+    .btn-explore {
+      display: inline-block;
+      background-color: #2a2a2a;
+      color: #fff;
+      font-family: '', sans-serif;
+      font-size: 0.9rem;
+      padding: 14px 32px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .btn-explore:hover {
+      background-color: #111;
+      transform: translateY(-2px);
+    }
+    
+    .gallery {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      gap: 16px;
+    }
+    .gallery-item {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      background-color: #e8e8e8; 
+      position: relative;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+    
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 500px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+.robotouniquifier> {
+  font-family: "poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+

@@ -1,0 +1,360 @@
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333333;
+    background-color: #ffffff;
+    /* White base color for right side */
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ================== TOP HERO SECTION ================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 80vh;
+    padding: 80px 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* 
+  The large curved shape on the left.
+  Uses absolute positioning and a very large border-radius 
+  on the bottom-right corner to match the layout.
+*/
+.bg-shape-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55%;
+    height: 100%;
+    background-color: #F4F4F4;
+    /* Very light cool gray */
+    border-bottom-right-radius: 200px;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* Sits above the background shape */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+/* --- LEFT COLUMN --- */
+.col-left {
+    flex: 1;
+    max-width: 550px;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #333333;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.text-green {
+    color: #45782B;
+    /* Deep leafy green */
+}
+
+.main-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 40px;
+}
+
+/* Stats Area */
+.stats-row {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.stat-item h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 8px;
+}
+
+/* The small gray dash under stat numbers */
+.underline-short {
+    width: 30px;
+    height: 2px;
+    background-color: #CCCCCC;
+    margin-bottom: 10px;
+}
+
+.stat-item p {
+    font-size: 0.85rem;
+    color: #777777;
+    line-height: 1.4;
+}
+
+/* Primary Green Button */
+.btn-green {
+    display: inline-block;
+    background-color: #4A7A30;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 18px 45px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 10px 20px rgba(74, 122, 48, 0.2);
+}
+
+.btn-green:hover {
+    background-color: #386024;
+    transform: translateY(-2px);
+}
+
+
+/* --- RIGHT COLUMN (Visuals) --- */
+.col-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Circular Rotating Stamp */
+.circular-stamp {
+    position: absolute;
+    top: -50px;
+    right: 20px;
+    width: 110px;
+    height: 110px;
+    z-index: 10;
+}
+
+.curved-text {
+    width: 100%;
+    height: 100%;
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.stamp-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+}
+
+.stamp-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Potted Plants Group */
+.plants-wrapper {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Pushes image slightly down to break out of the section naturally */
+    transform: translateY(40px);
+}
+
+.plants-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    z-index: 5;
+    /* Important for PNG to cast nice shadow */
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
+}
+
+
+/* ================== BOTTOM FEATURES CARDS ================== */
+.features-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px 40px 80px 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.feature-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* The distinctive white box with a thin border snippet trick */
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px 25px;
+
+    /* Trick to match the reference: Thin gray border, but hiding the top left and bottom right corners */
+    position: relative;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-bottom: 1px solid #4A4A4A;
+    border-right: 1px solid #4A4A4A;
+    border-radius: 15px;
+}
+
+/* Adding the top left partial borders using pseudo-elements to match exactly */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 20px;
+    height: 20px;
+    border-top: 1px solid #4A4A4A;
+    border-left: 1px solid #4A4A4A;
+    border-top-left-radius: 15px;
+}
+
+.feature-card::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    /* Hiding the sharp bottom right border over the main curvature */
+    box-shadow: inset -2px -2px 0px #fff;
+    border-bottom-right-radius: 15px;
+}
+
+.card-icon-box {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #F8F8F8;
+    /* Soft background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon-box img {
+    /* Using 100% gives the circular crop to the image */
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+}
+
+.feature-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #555555;
+}
+
+
+/* ================== RESPONSIVE ADAPTATIONS ================== */
+
+@media (max-width: 1024px) {
+    .bg-shape-left {
+        width: 100%;
+        height: 60%;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .col-left {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats-row {
+        justify-content: center;
+    }
+
+    .circular-stamp {
+        top: 0;
+        right: 0px;
+    }
+
+    .features-row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero-section {
+        padding: 50px 20px;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+    }
+
+    .stats-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .underline-short {
+        margin: 5px auto 10px auto;
+        /* Centers the dash */
+    }
+
+    .plants-wrapper {
+        transform: translateY(0);
+    }
+
+    .features-row {
+        padding: 20px 20px 60px 20px;
+        gap: 20px;
+    }
+
+    .feature-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -1,0 +1,290 @@
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #ffffff;
+    /* Space around the info bar */
+    color: #333333;
+    overflow-x: hidden;
+}
+
+/* ================== HERO SECTION ================== */
+.hero-section {
+    position: relative;
+    background-color: #EBB33E;
+    /* Mustard Yellow */
+    width: 100%;
+    /* Leaves room at the bottom for the white area to show */
+    padding-bottom: 120px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Decorative Background Paws */
+.paw-bg {
+    position: absolute;
+    color: #DEA530;
+    /* Slightly darker yellow for watermark effect */
+    z-index: 0;
+}
+
+.top-right-paw {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    right: -50px;
+    transform: rotate(30deg);
+}
+
+.bottom-left-paw {
+    width: 450px;
+    height: 450px;
+    bottom: -150px;
+    left: 10%;
+    transform: rotate(-20deg);
+}
+
+
+/* Content Layout */
+.hero-container {
+    position: relative;
+    z-index: 2;
+    /* Above paws */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 40px 0 40px;
+}
+
+/* --- Left Column --- */
+.col-left {
+    flex: 1;
+    max-width: 550px;
+}
+
+.col-left h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.col-left p {
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #fcebc7;
+    /* Very light yellow tint */
+    margin-bottom: 40px;
+}
+
+.btn-schedule {
+    display: inline-block;
+    background-color: #7CB5DF;
+    /* Gentle sky blue */
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 16px 38px;
+    border-radius: 40px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(124, 181, 223, 0.4);
+}
+
+.btn-schedule:hover {
+    background-color: #64a6d6;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(124, 181, 223, 0.5);
+}
+
+
+/* --- Right Column --- */
+.col-right {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Circular Text Decor */
+.circle-text-container {
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    width: 140px;
+    height: 140px;
+    z-index: 4;
+}
+
+.circle-text {
+    width: 100%;
+    height: 100%;
+    
+}
+
+@keyframes rotateText {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Main transparent dog image */
+.main-dog-img {
+    max-width: 100%;
+    height: auto;
+    width: 450px;
+    position: relative;
+    z-index: 3;
+    /* Uses a drop shadow to pop the transparent PNG off the yellow background */
+    filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.15));
+}
+
+/* The spiky star cutout for the puppy */
+
+
+.star-cutout img {
+    width: 120%;
+    /* Scale up slightly inside the clip path */
+    height: 100%;
+    top: 100%;
+    object-fit: cover;
+  
+    /* Counter-rotate so the puppy is straight */
+}
+
+
+/* ================== INFO BAR SECTION ================== */
+.info-section {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.info-bar {
+    max-width: 1100px;
+    width: 90%;
+    margin: 0 auto;
+    /* Overlaps the bottom edge of the yellow container */
+    margin-top: -60px;
+    margin-bottom: 70px;
+    background-color: #EFEFEF;
+    /* Soft light grey background */
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    /* Soft shadow popping it out */
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.info-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.info-text h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.info-text p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #666666;
+    font-weight: 600;
+}
+
+
+/* ================== RESPONSIVE ================== */
+
+@media (max-width: 1024px) {
+    .info-bar {
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+        padding: 40px;
+    }
+
+    .info-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .col-left {
+        max-width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .col-right {
+        justify-content: center;
+    }
+
+    .main-dog-img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .star-cutout {
+        bottom: 0;
+        right: 0;
+    }
+
+    .circle-text-container {
+        left: 0;
+    }
+
+    .col-left h1 {
+        font-size: 3.2rem;
+    }
+
+    .bottom-left-paw {
+        display: none;
+        /* Reduce visual clutter on mobile */
+    }
+}
+
+@media (max-width: 600px) {
+    .col-left h1 {
+        font-size: 2.5rem;
+    }
+
+    .info-bar {
+        width: 95%;
+        padding: 30px 20px;
+    }
+}

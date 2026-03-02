@@ -1,0 +1,220 @@
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    background-color: #ffffff;
+    /* White space at the bottom */
+    overflow-x: hidden;
+}
+
+/* ================== HERO SECTION ================== */
+
+    .hero-section {
+        position: relative;
+        width: 100%;
+        min-height: 88vh;
+        background-image: url('../media/fondo.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 0 0 50px 50px;
+        display: flex;
+        align-items: center;
+        padding: 0 80px;
+        z-index: 1;
+    }
+
+/* Subtle gradient overlay on the left side to make sure white text is always readable against any background image */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 60%);
+    border-radius: 0 0 50px 50px;
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 650px;
+    color: #ffffff;
+}
+
+.hero-content h1 {
+    font-size: 4.8rem;
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 45px;
+    color: #f8f8f8;
+    /* Slightly off-white for softer reading */
+    font-weight: 300;
+}
+
+/* Rounded Get Started Button */
+.btn-get-started {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #2b2b2b;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 18px 45px;
+    border-radius: 40px;
+    /* Pill shape */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-get-started:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ================== BOTTOM CATEGORY STRIP ================== */
+
+.categories-container {
+    max-width: 1300px;
+    width: 92%;
+    /* The negative top margin pulls the container up so it overlaps the bottom edge of the hero image */
+    margin: -80px auto 60px auto;
+    display: flex;
+    border-radius: 16px;
+    /* Rounded corners for the entire strip */
+    overflow: hidden;
+    /* Clips the child cards into the rounded corners */
+    position: relative;
+    z-index: 10;
+    background-color: #000;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.category-card {
+    flex: 1;
+    position: relative;
+    height: 160px;
+    text-decoration: none;
+    color: #ffffff;
+    overflow: hidden;
+    display: block;
+    /* Essential for the link tag */
+}
+
+/* The background image of each card */
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Dark gradient at the bottom of each image so the white text pops nicely */
+.category-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+    /* Allows hovering over the image smoothly */
+}
+
+/* Hover zoom effect */
+.category-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Category Text */
+.category-card span {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.15rem;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+}
+
+
+/* ================== RESPONSIVE DESIGN ================== */
+
+@media (max-width: 1200px) {
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-section {
+        padding: 0 40px;
+        min-height: 80vh;
+        border-radius: 0 0 30px 30px;
+        background-position: left center;
+        /* Shifts image view dynamically */
+    }
+
+    .hero-overlay {
+        border-radius: 0 0 30px 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 3.2rem;
+    }
+
+    /* Wrap the strip into a standard grid on smaller screens */
+    .categories-container {
+        flex-wrap: wrap;
+        margin-top: -50px;
+    }
+
+    .category-card {
+        flex: 1 1 33.333%;
+        /* 3 columns */
+        height: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-section {
+        padding: 0 25px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .categories-container {
+        width: 95%;
+    }
+
+    .category-card {
+        flex: 1 1 50%;
+        /* 2 columns */
+        height: 130px;
+    }
+}

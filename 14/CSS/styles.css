@@ -1,0 +1,229 @@
+﻿:root {
+    --text-primary: #382A20;
+    
+    --text-secondary: #5C4D44;
+    
+    --accent-yellow: #FDE17A;
+    
+    --bg-brown: #493A31;
+    
+    --bg-dark-shape: #382A20;
+    
+    --font-main: 'Poppins', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #FFFFFF;
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.container {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 40px;
+    
+}
+.left-content {
+    flex: 1;
+    max-width: 520px;
+    z-index: 10;
+}
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    color: var(--text-primary);
+}
+.desc {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+.btn-download {
+    background-color: var(--accent-yellow);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 14px 38px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-bottom: 70px;
+    
+    transition: transform 0.2s, background-color 0.2s;
+}
+.btn-download:hover {
+    transform: scale(1.02);
+    background-color: #f7d55f;
+}
+.stats-card {
+    background-color: var(--bg-brown);
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 45px;
+    width: 100%;
+}
+.stat-item {
+    color: #FFFFFF;
+}
+.stat-item h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.stat-item .line {
+    width: 25px;
+    height: 3px;
+    background-color: #FFFFFF;
+    margin: 10px 0 12px 0;
+    border-radius: 2px;
+}
+.stat-item p {
+    font-size: 0.85rem;
+    color: #D7CCC6;
+    
+    line-height: 1.4;
+    font-weight: 400;
+}
+.right-content {
+    position: relative;
+    width: 550px;
+    height: 700px;
+    flex-shrink: 0;
+    
+}
+.dark-box {
+    position: absolute;
+    width: 400px;
+    height: 480px;
+    background-color: var(--bg-dark-shape);
+    top: 130px;
+    right: -20px;
+    transform: rotate(18deg);
+   
+    z-index: 1;
+}
+.yellow-box {
+    position: absolute;
+    width: 380px;
+    height: 460px;
+    background-color: var(--accent-yellow);
+    top: 60px;
+    right: 50px;
+    z-index: 2;
+}
+.heart-icon {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    fill: var(--bg-dark-shape);
+    
+    top: 150px;
+    right: 110px;
+    z-index: 3;
+}
+.phone-screen img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 60%;
+    left: 70%;
+    transform-origin: start center;
+    transform: translate(-50%, -50%) rotate(calc(-1.4 * var(--angle)));
+    
+}
+.user-screen-image {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    transform: translateX(-50%);
+    z-index: 11;
+}
+.star {
+    position: absolute;
+}
+.star-xdark {
+    width: 140px;
+    height: 140px;
+    top: 0px;
+    left: 40px;
+    z-index: 5;
+    transform: rotate(-10deg);
+}
+.star-white {
+    width: 110px;
+    height: 110px;
+    top: 50px;
+    right: 10px;
+    z-index: 5;
+    transform: rotate(5deg);
+}
+.star-silver {
+    width: 120px;
+    height: 120px;
+    top: 310px;
+    right: -60px;
+    z-index: 5;
+    transform: rotate(25deg);
+}
+.star-yb {
+    width: 130px;
+    height: 130px;
+    bottom: -30px;
+    right: 30px;
+    z-index: 5;
+    transform: rotate(15deg);
+}
+@media (max-width: 1050px) {
+    .container {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 70px;
+    }
+    .left-content {
+        max-width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .right-content {
+        margin-top: 60px;
+        transform: scale(0.9);
+    }
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    .stats-card {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .right-content {
+        transform: scale(0.6);
+        margin-top: 0px;
+    }
+}

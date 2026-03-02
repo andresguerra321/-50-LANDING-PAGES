@@ -1,0 +1,340 @@
+/* Reset & Base Setup */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    /* Monospaced techy font */
+    color: #2F3133;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1250px;
+    width: 100%;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    /* Space between top hero and bottom cards */
+}
+
+
+/* ================== TOP SECTION ================== */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+
+/* --- LEFT COLUMN --- */
+.col-left {
+    flex: 1;
+    max-width: 450px;
+}
+
+.main-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #2D2D2D;
+    margin-bottom: 25px;
+}
+
+.description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 40px;
+}
+
+/* Rounded Dark Pill Button */
+.btn-primary {
+    display: inline-block;
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1a1a1a;
+}
+
+
+/* --- RIGHT COLUMN (Video Mockup Editor) --- */
+.col-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.video-mockup {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    /* Adding some padding space so the dashed border resize handles do not overflow off screen */
+    margin: 15px;
+}
+
+/* The actual image */
+.video-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* The Dashed Selection Box */
+.selection-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px dashed #1A1A1A;
+    z-index: 2;
+    pointer-events: none;
+    /* Let clicks pass through to image if needed */
+}
+
+/* The tiny squares at the corners (editing handles) */
+.handle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+    border: 1px solid #1A1A1A;
+}
+
+.handle-tl {
+    top: -6px;
+    left: -6px;
+}
+
+.handle-tr {
+    top: -6px;
+    right: -6px;
+}
+
+.handle-bl {
+    bottom: -6px;
+    left: -6px;
+}
+
+.handle-br {
+    bottom: -6px;
+    right: -6px;
+}
+
+/* The translucent Play Button Overlay */
+.play-btn-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    cursor: pointer;
+    backdrop-filter: blur(2px);
+    /* Slight glass effect */
+}
+
+.play-btn-overlay svg {
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
+    margin-left: 4px;
+    /* Optically centering triangle */
+}
+
+/* Mouse cursor element indicating click action */
+.cursor-img {
+    position: absolute;
+    bottom: -35px;
+    right: -25px;
+    width: 45px;
+    height: 45px;
+    z-index: 10;
+    /* Bobbing animation to make it look active */
+    animation: clickBob 2s infinite ease-in-out;
+}
+
+@keyframes clickBob {
+
+    0%,
+    100% {
+        transform: scale(1) translate(0, 0);
+    }
+
+    50% {
+        transform: scale(0.9) translate(-5px, -5px);
+    }
+
+    /* Clicks inwards towards the handle */
+}
+
+
+/* ================== BOTTOM INFO CARDS ================== */
+.cards-grid {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Shared Card Layout */
+.info-card {
+    flex: 1;
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    /* Soft shadow or no shadow depending on reference (Looks flat minimal) */
+}
+
+/* Brand Colors for Cards */
+.card-peach {
+    background-color: #F8CBB9;
+}
+
+.card-yellow {
+    background-color: #F8E696;
+}
+
+.card-mint {
+    background-color: #BDDDD8;
+}
+
+.card-purple {
+    background-color: #6C7DF5;
+}
+
+/* Need white text for this dark background */
+
+.card-purple .card-title,
+.card-purple .card-desc,
+.card-purple .card-number {
+    color: #ffffff;
+}
+
+/* Header row with Number and Icon paired */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.card-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1;
+}
+
+.card-icon {
+    width: 28px;
+    height: 28px;
+    background-color: #1A1A1A;
+    /* Dark sphere housing social icons */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Except IG which has its own gradient built into the SVG paths */
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #222222;
+}
+
+.card-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #444444;
+}
+
+
+/* ================== RESPONSIVE MOBILE ADJUSTMENTS ================== */
+
+@media (max-width: 1100px) {
+    .cards-grid {
+        flex-wrap: wrap;
+        /* Let cards flow to Next row */
+    }
+
+    .info-card {
+        flex: 1 1 calc(50% - 20px);
+        /* 2 columns */
+    }
+}
+
+@media (max-width: 900px) {
+    .top-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .col-left {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col-right {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 40px 20px;
+    }
+
+    .main-title {
+        font-size: 2.2rem;
+    }
+
+    .video-mockup {
+        margin: 10px;
+    }
+
+    .cards-grid {
+        flex-direction: column;
+        /* Stack cards vertically */
+    }
+
+    .info-card {
+        flex: 1 1 100%;
+    }
+}

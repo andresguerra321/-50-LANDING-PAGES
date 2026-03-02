@@ -1,0 +1,227 @@
+﻿:root {
+    --text-primary: #1A1A1A;
+    --text-secondary: #555555;
+    --font-heading: 'Google Sans', serif;
+    --font-body: 'Google Sans', sans-serif;
+    --bg-gradient: radial-gradient(circle at 40% 60%, rgba(199, 212, 255, 0.4) 0%, rgba(200, 246, 237, 0.4) 30%, rgba(253, 235, 187, 0.4) 70%, rgba(255, 255, 255, 1) 100%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: var(--bg-gradient);
+    background-color: #FAFAFA;
+    min-height: 100vh;
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 800px;
+    margin: 0 auto;
+}
+.main-title {
+    font-family: var(--font-heading);
+    font-size: 5.5rem;
+    line-height: .95;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
+    color: #222;
+}
+.subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+.center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+.explore-btn {
+    background-color: #2D2D2D;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-family: var(--font-body);
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.explore-btn:hover {
+    background-color: #1a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+.card {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+.left-card {
+    top: 50px;
+    left: 50px;
+    width: 300px;
+}
+.right-card {
+    top: 30px;
+    right: 50px;
+    width: 320px;
+}
+.image-wrapper {
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+.arch-top {
+    border-top-left-radius: 160px;
+    border-top-right-radius: 160px;
+}
+.left-card .image-wrapper {
+    height: 480px;
+    margin-top: 151px;
+    
+}
+.right-card .image-wrapper {
+    height: 450px;
+    margin-bottom: 20px;
+}
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.text-block {
+    max-width: 280px;
+}
+.text-top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.text-bottom-right {
+    margin-top: 20px;
+}
+.number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+}
+.text-block p {
+    font-family: var(--font-heading);
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+.star {
+    position: absolute;
+    z-index: 5;
+}
+.blue-star {
+    width: 120px;
+    height: 120px;
+    top: 180px;
+    left: 80px;
+    animation: rotateSlow 20s linear infinite;
+}
+.black-star-1 {
+    width: 250px;
+    height: 200px;
+    top: 180px;
+    left: 200px;
+    transform: rotate(15deg);
+}
+.black-star-2 {
+    width: 180px;
+    height: 340px;
+    bottom: 150px;
+    right: 250px;
+    transform: rotate(45deg);
+}
+.gold-sunburst {
+    width: 140px;
+    height: 150px;
+    bottom: 190px;
+    right: 20px;
+    animation: rotateSlowReverse 25s linear infinite;
+}
+@keyframes rotateSlow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes rotateSlowReverse {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+@media (max-width: 1024px) {
+    .container {
+        transform: scale(0.8);
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 50px 20px;
+    }
+    .center-content {
+        position: relative;
+        transform: none;
+        top: 0;
+        left: 0;
+        margin-bottom: 50px;
+        order: 1;
+    }
+    .card {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-bottom: 40px;
+        order: 2;
+    }
+    .left-card .image-wrapper {
+        margin-top: 20px;
+    }
+    .star {
+        display: none;
+    }
+}
+.google-sans-uniquifier {
+  font-family: "Google Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "GRAD" 0;
+}

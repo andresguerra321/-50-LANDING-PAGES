@@ -1,0 +1,273 @@
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #F6F6F8;
+    /* Soft neutral gray to make the white card pop */
+    color: #333333;
+    padding: 60px 40px;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+}
+
+/* ================== MAIN CARD CONTAINER ================== */
+.main-card {
+    width: 100%;
+    max-width: 1100px;
+    background-color: #ffffff;
+    border: 1px solid #2D2D2D;
+    /* Soft shadow? No, brutalism standard is flat borders */
+}
+
+
+/* ================== HEADER ================== */
+.card-header {
+    border-bottom: 1px solid #2D2D2D;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.card-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #333333;
+    letter-spacing: -1.5px;
+}
+
+
+/* ================== BODY GRID ================== */
+.card-body {
+    display: flex;
+    width: 100%;
+}
+
+
+/* ================== LEFT CONTENT ================== */
+.content-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 50px;
+}
+
+.sub-title {
+    font-size: 2.6rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: #333333;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.desc {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 35px;
+}
+
+/* Hard Shadows Button */
+.btn-dark {
+    display: inline-block;
+    background-color: #2D2D2D;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 500;
+    padding: 16px 36px;
+    border-radius: 40px;
+    align-self: flex-start;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* This creates the solid shadow block dropping to the bottom right */
+    box-shadow: 4px 5px 0px rgba(0, 0, 0, 0.9);
+    margin-bottom: 60px;
+}
+
+.btn-dark:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 3px 0px rgba(0, 0, 0, 0.9);
+}
+
+/* Stats Container Box */
+.stats-box {
+    border: 1px solid #2D2D2D;
+    border-radius: 24px;
+    padding: 35px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+    max-width: 480px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-item h4 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #222222;
+    margin-bottom: 8px;
+}
+
+.stat-item p {
+    font-size: 0.8rem;
+    color: #777777;
+    line-height: 1.5;
+}
+
+/* The thick separator used between rows */
+.dash {
+    width: 35px;
+    height: 3px;
+    background-color: #2D2D2D;
+    margin: 25px 0 20px 0;
+}
+
+
+/* ================== RIGHT CONTENT (GALLERY) ================== */
+.content-right {
+    flex: 1;
+    border-left: 1px solid #2D2D2D;
+    background-color: #ffffff;
+    /* So the gaps act as white borders */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    /* Produces the white lines between blocks natively */
+    /* Notice there is no padding to ensure photos touch right/bottom container edges */
+}
+
+/* Backgrounds and Overflows */
+.grid-item {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Drop images perfectly to floor */
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    /* Anchor transparent PNGs to floor so they do not float */
+}
+
+/* Colored Backdrops for PNGs */
+.item-star {
+    background-color: #ffffff;
+    align-items: center;
+}
+
+.item-pink {
+    background-color: #E2A9D3;
+}
+
+.item-blue {
+    background-color: #7CB2DB;
+    grid-row: span 2;
+}
+
+/* Spans two rows making it tall */
+.item-purple {
+    background-color: #6F61C0;
+}
+
+.item-yellow {
+    background-color: #D6A850;
+}
+
+/* The SVG Star Setup */
+.star-wrapper {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.star-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.star-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #2D2D2D;
+    line-height: 1.35;
+}
+
+
+/* ================== RESPONSIVE MEDIA QUERIES ================== */
+
+@media (max-width: 1024px) {
+    .card-body {
+        flex-direction: column;
+    }
+
+    .content-left {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #2D2D2D;
+    }
+
+    .content-right {
+        width: 100%;
+        border-left: none;
+        /* Increase static height for grid row to prevent image squeezing in mobile */
+        grid-template-rows: repeat(3, 220px);
+    }
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 20px;
+    }
+
+    .card-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .sub-title {
+        font-size: 2.2rem;
+    }
+
+    .content-left {
+        padding: 40px 30px;
+    }
+
+    .stats-box {
+        padding: 25px 20px;
+        gap: 0 20px;
+    }
+
+    .star-text {
+        font-size: 0.85rem;
+    }
+}

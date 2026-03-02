@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design What You Love</title>
+    <!-- Importing modern serif and sans-serif fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <!-- Top Half containing the copy and the visual -->
+        <section class="hero-section">
+            <div class="container hero-container">
+
+                <div class="hero-content">
+                    <div class="badge-container">
+                        <div class="spinning-text" id="circular-text"></div>
+                        <div class="badge-icon">
+                            <!-- Star SVG -->
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 0C12 5.52285 16.4772 10 22 10C16.4772 10 12 14.4772 12 20C12 14.4772 7.52285 10 2 10C7.52285 10 12 5.52285 12 0Z"
+                                    fill="#1A1A1A" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Design<br>
+                        what you love
+                    </h1>
+
+                    <p class="hero-description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus imperdiet sed id elementum. Quam
+                        vel aliquam sit vulputate.consectetur adipiscing elit.
+                    </p>
+
+                    <a href="#" class="btn btn-primary">Get started</a>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="arch-shape"></div>
+                    <!-- Robot Image - Left blank for user to add their own or we'll add a placeholder -->
+                    <img src="media/1.png" alt="3D Robot Character" class="robot-img" onerror="this.style.display='none'">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Bottom Half containing the feature cards overlapping the orange section -->
+        <section class="bottom-section">
+            <div class="container cards-container">
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <!-- Heart -->
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z"
+                                fill="#E8A76B" />
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Title</h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <!-- Star -->
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.62L12 2L9.19 8.62L2 9.24L7.45 13.97L5.82 21L12 17.27Z"
+                                fill="#E8A76B" />
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Title</h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <!-- Eye -->
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 4.5C7 4.5 2.73 7.61 1 12C2.73 16.39 7 19.5 12 19.5C17 19.5 21.27 16.39 23 12C21.27 7.61 17 4.5 12 4.5ZM12 17C9.24 17 7 14.76 7 12C7 9.24 9.24 7 12 7C14.76 7 17 9.24 17 12C17 14.76 14.76 17 12 17ZM12 9C10.34 9 9 10.34 9 12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12C15 10.34 13.66 9 12 9Z"
+                                fill="#E8A76B" />
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Title</h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Script to make text circle around the star badge -->
+    <script>
+        const text = 'Lorem ipsum , cons  a m e t   ';
+        const circleTextEl = document.getElementById('circular-text');
+
+        // Calculate degree per char based on total characters
+        const degPerChar = 360 / text.length;
+
+        circleTextEl.innerHTML = text.split('').map((char, i) => {
+            return `<span style="transform:rotate(${i * degPerChar}deg)">${char}</span>`;
+        }).join('');
+    </script>
+</body>
+
+</html>
