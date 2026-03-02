@@ -1,37 +1,73 @@
-# Colección de landing pages
+#Colección de Landing Pages
+Descripción del proyecto
 
-Hola! Soy un estudiante de secundaria y aquí están mis landing pages.
+Este repositorio contiene una colección de landing pages desarrolladas como práctica y mejora continua en diseño y maquetación web.
 
-Qué es esto
-- Una colección de carpetas numeradas (1 a 45) con ejemplos de "landing pages".
-- Cada carpeta suele tener un `index.html`, una carpeta `CSS/` y una carpeta `media/`.
+Cada landing page es independiente y está organizada en carpetas numeradas para mantener un orden progresivo.
 
-Cómo verlas (rápido y fácil)
-1. Clona este repo o descárgalo.
-2. Abre la carpeta que quieras (por ejemplo `45`).
-3. Haz doble click en `index.html` para verlo en el navegador.
+#Estructura del proyecto
 
-Si prefieres un servidor local (recomendado para rutas relativas):
+El repositorio está organizado en carpetas con numeración consecutiva:
 
-```bash
+1/
+2/
+3/
+...
+45/
+
+#Cada carpeta contiene:
+
+index.html
+
+Carpeta CSS/
+
+Carpeta media/ (imágenes necesarias para el diseño)
+
+⚠ Es necesario descargar la carpeta completa o el repositorio completo para que la landing funcione correctamente, ya que las imágenes y los estilos están vinculados mediante rutas relativas.
+
+##Si solo se descarga el archivo index.html, la página no se visualizará correctamente.
+
+#Instrucciones de uso
+Opción recomendada (descargar todo el repositorio)
+
+Descargue o clone el repositorio completo.
+
+Extraiga los archivos si descargó el archivo .zip.
+
+Ingrese a la carpeta de la landing que desea visualizar (por ejemplo 45).
+
+Abra el archivo index.html en su navegador.
+
+Opción alternativa (usar servidor local)
+
+Para evitar posibles errores con rutas relativas:
+
+Descargue el repositorio completo.
+
+Abra una terminal dentro de la carpeta principal del proyecto.
+
+#Ejecute:
+
 python -m http.server 8000
-# luego abre http://localhost:8000/45/
-```
 
-Notas importantes
-- Quité las carpetas `backups/` y `scripts/` (y varios `.ps1`) del historial y del seguimiento del repo.
-- Si ya clonaste el repo antes del cambio, vuelve a clonarlo para tener el historial limpio:
+Abra en el navegador:
 
-```bash
-git fetch origin
-git reset --hard origin/main
-```
+http://localhost:8000/45/
 
-Si quieres añadir más landing pages:
-- Crea una nueva carpeta con el siguiente número disponible.
-- Añade `index.html`, `CSS/` y `media/` si hace falta.
-- Haz commit y push.
+(Reemplace 45 por el número de la landing que desea ver.)
 
-¿Algo más? Dime si quieres que haga un README más formal o que añada un ejemplo destacado.
 
-# -50-LANDING-PAGES
+
+##Notas importantes
+
+Cada landing funciona de manera independiente.
+
+Es obligatorio mantener la estructura de carpetas.
+
+No se debe modificar la numeración existente.
+
+Se recomienda verificar que las imágenes y estilos estén correctamente vinculados antes de subir cambios.
+
+Autor
+
+Andrés Felipe Guerra Correa
