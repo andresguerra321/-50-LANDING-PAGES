@@ -1,0 +1,16 @@
+# Ignore backup and helper folders
+backups/
+scripts/
+
+# Ignore PowerShell helper scripts
+*.ps1
+
+# Ignore generated/responsive template
+responsive-template.css
+
+# Common OS artifacts
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
