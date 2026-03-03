@@ -1,17 +1,19 @@
-/* ========== RESET & BASE ========== */
-*, *::before, *::after {
+/* Base */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 :root {
-  --bg:        #f4f7f2;
-  --green:     #c8e6c0;
-  --black:     #1a1a1a;
-  --gray:      #555;
-  --white:     #ffffff;
-  --font:      'DM Sans', sans-serif;
+  --bg: #f4f7f2;
+  --green: #c8e6c0;
+  --black: #1a1a1a;
+  --gray: #555;
+  --white: #ffffff;
+  --font: 'DM Sans', sans-serif;
 }
 
 body {
@@ -21,7 +23,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ========== HERO ========== */
+/* Hero */
 .hero {
   position: relative;
   display: grid;
@@ -33,7 +35,7 @@ body {
   gap: 32px;
 }
 
-/* ---- Blobs ---- */
+/* Blobs */
 .blob {
   position: absolute;
   border-radius: 50%;
@@ -57,7 +59,7 @@ body {
   border-radius: 50% 50% 50% 50% / 60% 40% 60% 40%;
 }
 
-/* ---- Left ---- */
+/* Izquierda */
 .hero__left {
   position: relative;
   z-index: 2;
@@ -100,7 +102,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* ---- Right ---- */
+/* Derecha */
 .hero__right {
   position: relative;
   z-index: 2;
@@ -111,7 +113,7 @@ body {
   min-height: 440px;
 }
 
-/* Plant image */
+/* Planta */
 .hero__plant {
   position: absolute;
   z-index: 2;
@@ -119,10 +121,10 @@ body {
   max-width: 100%;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
 }
 
-/* ---- Circular badges ---- */
+/* Etiquetas circulares */
 .badge {
   position: absolute;
   z-index: 3;
@@ -147,7 +149,7 @@ body {
   transform: translateY(-20%);
 }
 
-/* ========== CARDS ========== */
+/* Tarjetas */
 .cards {
   padding: 0 48px 56px;
 }
@@ -183,7 +185,7 @@ body {
   line-height: 1.65;
 }
 
-/* ========== RESPONSIVE ========== */
+/* Responsive */
 @media (max-width: 900px) {
   .hero {
     grid-template-columns: 1fr;
