@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Studio</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Librería para los iconos -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Columna Izquierda -->
+        <div class="col-left">
+            <h1>We are</h1>
+            <div class="pill-container">
+                <div class="pill-shadow-2"></div>
+                <div class="pill-shadow-1"></div>
+                <div class="pill-content">
+                    <span class="italic-text">digital</span>
+                </div>
+            </div>
+            <h1>studio</h1>
+        </div>
+
+        <!-- Columna Central -->
+        <div class="col-center">
+            <!-- Gráfico del imán en SVG -->
+            <svg width="140" height="160" viewBox="0 0 140 160" fill="none" stroke="black" stroke-width="1.5" class="magnet">
+                <path d="M10 150 V 70 A 60 60 0 0 1 130 70 V 150" />
+                <path d="M30 150 V 70 A 40 40 0 0 1 110 70 V 150" />
+                <path d="M50 150 V 70 A 20 20 0 0 1 90 70 V 150" />
+                <line x1="10" y1="120" x2="50" y2="120" />
+                <line x1="90" y1="120" x2="130" y2="120" />
+                <line x1="10" y1="135" x2="50" y2="135" />
+                <line x1="90" y1="135" x2="130" y2="135" />
+                <line x1="10" y1="150" x2="50" y2="150" />
+                <line x1="90" y1="150" x2="130" y2="150" />
+            </svg>
+            <button class="btn-start">Get started</button>
+        </div>
+
+        <!-- Columna Derecha -->
+        <div class="col-right">
+            <div class="list">
+                <div class="list-item">
+                    <span class="number">01</span>
+                    <div class="text-content">
+                        <h3>Title 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus imperdiet sed id elementum. Quam vel aliquam sit vulputate.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <span class="number">02</span>
+                    <div class="text-content">
+                        <h3>Title 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus imperdiet sed id elementum. Quam vel aliquam sit vulputate.</p>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <span class="number">03</span>
+                    <div class="text-content">
+                        <h3>Title 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus imperdiet sed id elementum. Quam vel aliquam sit vulputate.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Caja de estadísticas -->
+            <div class="stats-container">
+                <div class="stats-shadow-2"></div>
+                <div class="stats-shadow-1"></div>
+                <div class="stats-content">
+                    <div class="stat">113+</div>
+                    <div class="stat">274K</div>
+                    <div class="stat">179+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Elementos que van sobre la tableta en tu imagen -->
+    <div class="tablet-overlay">
+        <div class="badge">
+            <i data-lucide="star" class="star-icon"></i>
+            <svg class="rotating-text" viewBox="0 0 100 100">
+                <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+                <text fill="white" font-size="9.5" letter-spacing="2">
+                    <textPath href="#circlePath">Design . Design . Design . Design .</textPath>
+                </text>
+            </svg>
+        </div>
+        <div class="socials">
+            <i data-lucide="facebook"></i>
+            <i data-lucide="twitter"></i>
+            <i data-lucide="instagram"></i>
+            <i data-lucide="youtube"></i>
+        </div>
+    </div>
+
+    <!-- Inicializar iconos -->
+    <script>
+        lucide.createIcons();
+    </script>
+        <img src="media/unsplash_muOHbrFGEQY.png" alt="Tablet Image">
+</body>
+</html>

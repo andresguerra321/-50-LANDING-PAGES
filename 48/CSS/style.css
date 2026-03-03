@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,700;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* El fondo principal puede ser un color sólido o una imagen opcional.
+       Si quieres un área fija en la parte inferior, coloca un elemento
+       <div class="bottom-image"><img src="..." alt=""></div> en el HTML.
+       La hoja de estilos se encargará de posicionarlo y dimensionarlo.
+    */
+    background-color: #fcd02c;
+    color: #111827;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    position: relative;
+    z-index: 10;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 6rem 2rem;
+    }
+}
+
+/* Tipografía */
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 1024px) {
+    h1 { font-size: 6rem; }
+}
+
+/* Estilos de la caja "digital" */
+.pill-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+@media (min-width: 1024px) {
+    .pill-container { margin-left: 2rem; }
+}
+
+.pill-shadow-1, .pill-shadow-2 {
+    position: absolute;
+    inset: 0;
+    border: 1.5px solid black;
+    border-radius: 100px;
+}
+
+.pill-shadow-1 { transform: translate(6px, 6px); }
+.pill-shadow-2 { transform: translate(12px, 12px); }
+
+.pill-content {
+    position: relative;
+    border: 1.5px solid black;
+    border-radius: 100px;
+    padding: 0.5rem 3rem;
+    background-color: #fcd02c;
+}
+
+.italic-text {
+    font-size: 4rem;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: -0.025em;
+    padding-right: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+    .italic-text { font-size: 6rem; }
+}
+
+/* Columna Central */
+.col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    padding-top: 6rem;
+}
+
+@media (min-width: 1024px) {
+    .col-center { padding-top: 0; }
+}
+
+.magnet {
+    transform: scale(1.25);
+}
+
+.btn-start {
+    background-color: #0a0a0a;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 100px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-start:hover {
+    background-color: #262626;
+}
+
+/* Columna Derecha */
+.col-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4rem;
+    padding-top: 3rem;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.list-item {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.number {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-top: 0.25rem;
+}
+
+.text-content h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.text-content p {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.875rem;
+    line-height: 1.625;
+    max-width: 280px;
+}
+
+/* Caja de Estadísticas */
+.stats-container {
+    position: relative;
+    align-self: flex-start;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.stats-shadow-1, .stats-shadow-2 {
+    position: absolute;
+    inset: 0;
+    border: 1.5px solid black;
+    border-radius: 100px;
+}
+
+.stats-shadow-1 { transform: translate(4px, 4px); }
+.stats-shadow-2 { transform: translate(8px, 8px); }
+
+.stats-content {
+    position: relative;
+    border: 1.5px solid black;
+    border-radius: 100px;
+    padding: 1rem 2.5rem;
+    background-color: #fcd02c;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.stat {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+/* Elementos superpuestos en la tableta (Abajo a la derecha) */
+.tablet-overlay {
+    position: absolute;
+    bottom: 4rem;
+    right: 6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    z-index: 20;
+    /* Inclinamos los iconos para que coincidan con la tableta de tu foto */
+    transform: rotate(45deg); 
+}
+
+.badge {
+    position: relative;
+    width: 7rem;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.star-icon {
+    width: 28px;
+    height: 28px;
+    fill: white;
+}
+
+.rotating-text {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.socials {
+    display: flex;
+    gap: 1.25rem;
+    color: white;
+}
+
+.socials i {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 1023px) {
+    .tablet-overlay {
+        bottom: 2rem;
+        right: 2rem;
+        transform: rotate(0deg); /* En móviles mejor no inclinarlo */
+    }
+}
+
+/* ══════════════ Imagen inferior colocada en HTML ════════════════ */
+.bottom-image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 80%;
+    /* La altura la dicta la propia imagen contenida */
+    z-index: 2;
+    overflow: hidden;
+}
+
+.bottom-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: top center;
+}
